@@ -26,7 +26,13 @@ class Personaje:
 
     def mover(self, dx, dy):
         # epic movement from Mr.P
+        if(self.x>=800):
+            self.x=1
         self.canvas.move(self.id_cuerpo, dx, dy)
         self.canvas.move(self.id_ojo, dx, dy)
         self.x += dx
         self.y += dy
+
+
+
+

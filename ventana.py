@@ -8,12 +8,14 @@ ventana.geometry("800x700")
 
 canvas_width = 800
 canvas_height = 700
-escenario_canvas = tk.Canvas(label_img, width=canvas_width, height=canvas_height, bg="#2c3e50")
-escenario_canvas.pack(fill=tk.BOTH, expand=True)
 img_fondo = Image.open("assets/suelo.jpg")
 imagen_resize = img_fondo.resize((800,700),Image.LANCZOS)
 imgtk = ImageTk.PhotoImage(imagen_resize)
 label_img = tk.Label(ventana, image=imgtk)
+escenario_canvas = tk.Canvas(label_img, width=canvas_width, height=canvas_height, bg="#2c3e50")
+escenario_canvas.pack(fill=tk.BOTH, expand=True)
+
+
 label_img.pack(padx=10, pady=10)
 
 # Crear Mini PEKKA en el centro
