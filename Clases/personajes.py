@@ -27,8 +27,35 @@ class Personaje:
     def mover(self, dx, dy):
         # epic movement from Mr.P
         if(self.x>=800):
-            self.x=1
-        if
+            salto=-799
+            self.canvas.move(self.id_cuerpo, salto, 0)
+            self.canvas.move(self.id_ojo, salto, 0)
+            self.x += salto
+            # te lo voy a explicar paso a paso porque mañana se te habra olvidado
+            # primero defines una variable salto a la que le asignas la distancia del tp
+            # luego dibujas el objeto (por eso una para el cuerpo y otra para el ojo
+            # por ultimo le asignas a self.x el nuevo valor
+            # lo mismo para las otras
+
+        if(self.x<=0):
+            salto=799
+            self.canvas.move(self.id_cuerpo, salto, 0)
+            self.canvas.move(self.id_ojo, salto, 0)
+            self.x += salto
+
+        if(self.y>=700):
+            salto=-699
+            self.canvas.move(self.id_cuerpo, 0, salto)
+            self.canvas.move(self.id_ojo, 0, salto)
+            self.y += salto
+
+        if(self.y<=0):
+            salto=699
+            self.canvas.move(self.id_cuerpo, 0, salto)
+            self.canvas.move(self.id_ojo, 0, salto)
+            self.y += salto
+
+
         self.canvas.move(self.id_cuerpo, dx, dy)
         self.canvas.move(self.id_ojo, dx, dy)
         self.x += dx
